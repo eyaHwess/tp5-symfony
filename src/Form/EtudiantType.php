@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Etudiant;
-use App\Entity\institut;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,9 +14,10 @@ class EtudiantType extends AbstractType
     {
         $builder
             ->add('nome')
-            ->add('instit',EntityType::class,array('class'=>'Institut','choice_label'=>'nomi',
-            'choice_value'=>'id') 
-            )            
+            ->add('instit',EntityType::class,array('class'=>'Institut',
+            'choice_label'=>'nomi',
+            'choice_value'=>'id')
+            )
         ;
     }
 

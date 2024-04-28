@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Institut;
 use App\Repository\EtudiantRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -18,7 +19,7 @@ class Etudiant
 
     #[ORM\ManyToOne(inversedBy: 'etudiants')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?institut $instit = null;
+    private ?Institut $instit = null;
 
     public function getId(): ?int
     {
@@ -37,7 +38,7 @@ class Etudiant
         return $this;
     }
 
-    public function getInstit(): ?institut
+    public function getInstit(): ?Institut
     {
         return $this->instit;
     }
